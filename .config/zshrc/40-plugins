@@ -1,0 +1,42 @@
+# -----------------------------------------------------
+# PLUGINS 
+# -----------------------------------------------------
+# -----------------------------------------------------
+# zplug Zsh-Plugin Manager 
+# https://github.com/zplug/zplug
+# -----------------------------------------------------
+source ~/.zplug/init.zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/docker", from:oh-my-zsh
+zplug "marlonrichert/zsh-autocomplete", as:plugin
+zplug "zsh-users/zsh-autosuggestions", as:plugin
+zplug "Atlas34/fzf-plugin", as:plugin
+zplug "z-shell/zsh-eza"
+
+zplug "zsh-users/zsh-syntax-highlighting", defer:2 #Must be last sourced plugin
+
+# -----------------------------------------------------
+# AUTOCOMPLETES
+# Keep above compinit
+# -----------------------------------------------------
+source $ZPLUG_REPOS/marlonrichert/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $ZPLUG_REPOS/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+
+# -----------------------------------------------------
+# zsh-eza 
+# -----------------------------------------------------
+export _EZA_PARAMS=('--git' '--group' '--group-directories-first' '--time-style=long-iso' '--color-scale=all' '--icons')
+export AUTOCD=1
+
+# -----------------------------------------------------
+# FZF 
+# -----------------------------------------------------
+export FZF_BASE=/usr/bin/fzf
+export DISABLE_FZF_AUTO_COMPLETION="false"
+source <(fzf --zsh)
+
+# -----------------------------------------------------
+# ZSH-SYNTAX-HIGHLIGHTING
+# Keep close to bottom of file
+# -----------------------------------------------------
+source $ZPLUG_REPOS/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,0 +1,46 @@
+# -----------------------------------------------------
+# CUSTOMIZATION
+# -----------------------------------------------------
+
+source $HOME/.config/zshrc/40-plugins
+# Terminal 
+#export TERM="xterm-256color"
+export TERM="xterm-kitty"
+export PATH="/usr/lib/ccache/bin/:$PATH"
+
+# zsh history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
+# -----------------------------------------------------
+# FZF 
+# -----------------------------------------------------
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
+
+# -----------------------------------------------------
+# Starship promt
+# -----------------------------------------------------
+eval "$(starship init zsh)"
+
+# -----------------------------------------------------
+# zoxide
+# -----------------------------------------------------
+eval "$(zoxide init --cmd cd zsh)"
+
+# -----------------------------------------------------
+# Compinit 
+# Keep close to bottom of file
+# -----------------------------------------------------
+autoload -Uz compinit
+compinit
+
+# -----------------------------------------------------
+# oh-my-posh promt
+# -----------------------------------------------------
+# Custom Theme
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+

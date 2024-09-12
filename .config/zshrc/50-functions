@@ -1,0 +1,3 @@
+mov-cli-upd8() {
+pipx upgrade mov-cli --include-injected
+}

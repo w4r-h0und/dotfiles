@@ -1,0 +1,17 @@
+# -----------------------------------------------------
+# INIT
+# -----------------------------------------------------
+
+# -----------------------------------------------------
+# Exports
+# -----------------------------------------------------
+export EDITOR=nvim
+export PATH="/usr/lib/ccache/bin/:$PATH"
+export ZSH="$HOME/.zshrc"
+export ZSH_CONFIG="$HOME/.config/zshrc/"
+export TERM="xterm-kitty" #"xterm-256color"
+export PATH="/usr/lib/ccache/bin/:$PATH"
+
+export DOCKER_HOST=unix:///var/run/docker.sock
+
+
